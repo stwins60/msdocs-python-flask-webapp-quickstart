@@ -41,5 +41,3 @@ npm install
 Verify that the following are valid
 * ...
 
-## Other Information
-<!-- Add any other helpful information that may be needed here. -->
