@@ -2,7 +2,7 @@ name: Run Flask App CI/CD Pipeline on Push
 on:
   push:
     branches:
-      - 'main'
+      - 'master'
 jobs:
   build:
     runs-on: ubuntu-latest
