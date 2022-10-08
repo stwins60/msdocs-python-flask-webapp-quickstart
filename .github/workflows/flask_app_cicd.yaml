@@ -17,13 +17,13 @@ jobs:
         run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
       - name: Build and Push Docker Image
-        run: docker build -t ${DOCKER_USERNAME}/ms-flask-app:latest .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/ms-flask-app:latest .
 
       - name : Push Docker Image
-        run: docker push ${DOCKER_USERNAME}/ms-flask-app:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/ms-flask-app:latest
 
       - name: Run Docker Image
-        run: docker run -d -p 5000:5000 ${DOCKER_USERNAME}/ms-flask-app:latest
+        run: docker run -d -p 5000:5000 ${{ secrets.DOCKER_USERNAME }}/ms-flask-app:latest
 
       - name: Test Docker Image
         run: curl http://localhost:5000
