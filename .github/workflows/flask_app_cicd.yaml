@@ -17,7 +17,7 @@ jobs:
         run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
       - name: Build and Push Docker Image
-        run: docker build -t $DOCKER_USERNAME/ms-flask-app:latest .
+        run: docker build --tag $DOCKER_USERNAME/ms-flask-app:latest .
 
       - name : Push Docker Image
         run: docker push $DOCKER_USERNAME/ms-flask-app:latest
