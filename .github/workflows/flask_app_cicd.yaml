@@ -1,15 +1,17 @@
-name: Run Flask App CI/CD Pipeline on Push
+name: "Run flask App CI/CD Pipeline"
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v1
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
         with:
           python-version: 3.8
       - name: Install requirements
@@ -18,4 +20,3 @@ jobs:
           pip install -r requirements.txt
       - name: Running flask app
         run: python app.py
-    
